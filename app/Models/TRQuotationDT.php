@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Auth;
+use Illuminate\Support\Facades\DB;
 
 class TRQuotationDT extends Model
 {
@@ -18,25 +19,37 @@ class TRQuotationDT extends Model
 
     public $timestamps = false;
 
-    public function quotationheader(){
+    public function quotationheader()
+    {
         return $this->belongsTo('\App\Models\TRQuotationHD', 'DOCNO', 'DOCNO');
     }
 
 
-    public function getHargaSupplierAttribute(){
+    public function getHargaSupplierAttribute()
+    {
         $kodeSup = Auth::user()->name;
         $harga = null;
-        if($kodeSup == $this->quotationheader->SUPPLIERCODE){
+        if ($kodeSup == $this->quotationheader->SUPPLIERCODE) {
             $harga = $this->HARGA;
-        } else if($kodeSup == $this->quotationheader->SUPPB){
+        } else if ($kodeSup == $this->quotationheader->SUPPB) {
             $harga = $this->HARGA2;
-        } else if($kodeSup == $this->quotationheader->SUPPC){
+        } else if ($kodeSup == $this->quotationheader->SUPPC) {
             $harga = $this->HARGA3;
-        } 
+        }
         return $harga;
     }
 
-    public function getHargaSupplierFormatAttribute(){
-        return 'Rp. '.number_format($this->harga_supplier, 2 ,',', '.');
+    public function getHargaSupplierFormatAttribute()
+    {
+        $kodeSup = Auth::user()->name;
+
+        $currSymbol = DB::table('MSSUPPLIER as a')
+            ->join('MSCURRENCY as b', 'a.CURRENCY', '=', 'b.CURRCODE')
+            ->where('a.SUPPLIERCODE', $kodeSup)
+            ->value('b.CURRSYMBOL');
+
+        $symbol = $currSymbol ?? 'Rp.';
+
+        return $symbol . ' ' . number_format($this->harga_supplier, 2, ',', '.');
     }
 }
