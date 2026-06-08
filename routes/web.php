@@ -13,6 +13,7 @@ Route::middleware('admin')->group(function () {
 // Route::post('signup', 'SignupController@store')->name('signup.store');
 
 Route::get('/', [UsersController::class, 'login'])->name('login');
+Route::get('login', [UsersController::class, 'login']);
 Route::post('signin', [UsersController::class, 'signInCek'])->name('signin.check');
 Route::get('logout', [UsersController::class, 'logout'])->name('logout');
 

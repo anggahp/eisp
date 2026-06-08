@@ -367,7 +367,7 @@
         var id = $(this).data('id');
         $.ajax({
             type: 'GET',
-            url : '{{ url('/users') }}/'+id+'/edit',
+            url : '{{ url('/users') }}/'+encodeURIComponent(id)+'/edit',
             data: '',
             success: function(data)
             {
