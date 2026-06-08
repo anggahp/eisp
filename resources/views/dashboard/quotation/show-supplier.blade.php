@@ -92,7 +92,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="DOCNO">Quotation No</label>
-                                <input type="text" class="form-control" id="txtDocno" readonly  placeholder="DOCNO"  onkeyup="this.value = this.value.toUpperCase();" readonly style="background-color: transparent;">
+                                <input type="text" class="form-control" id="txtDocno" readonly  placeholder="Quotation No"  onkeyup="this.value = this.value.toUpperCase();" readonly style="background-color: transparent;">
                             </div>
                         </div>
                     </div>
@@ -100,7 +100,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                               <label for="KETBRG">Item Name</label>
-                              <input type="text" class="form-control" id="txtBarang" readonly  placeholder="KETBRG"  onkeyup="this.value = this.value.toUpperCase();" readonly style="background-color: transparent;">
+                              <input type="text" class="form-control" id="txtBarang" readonly  placeholder="Item Name"  onkeyup="this.value = this.value.toUpperCase();" readonly style="background-color: transparent;">
                             </div>
                         </div>
                     </div>
@@ -108,7 +108,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                               <label for="QTY">Qty</label>
-                              <input type="number" class="form-control" id="txtQty" readonly placeholder="QTY"  onkeyup="this.value = this.value.toUpperCase();" readonly style="background-color: transparent;">
+                              <input type="number" class="form-control" id="txtQty" readonly placeholder="Qty"  onkeyup="this.value = this.value.toUpperCase();" readonly style="background-color: transparent;">
                             </div>
                         </div>
                     </div>
@@ -116,7 +116,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                               <label for="SATUAN">Unit</label>
-                              <input type="text" class="form-control" id="txtSatuan" readonly  placeholder="SATUAN"  onkeyup="this.value = this.value.toUpperCase();" readonly style="background-color: transparent;">
+                              <input type="text" class="form-control" id="txtSatuan" readonly  placeholder="Unit"  onkeyup="this.value = this.value.toUpperCase();" readonly style="background-color: transparent;">
                             </div>
                         </div>
                     </div>
@@ -124,7 +124,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                               <label for="HARGA">Price (Exclude VAT and after discount)</label>
-                              <input type="number" class="form-control" id="txtHarga" name="harga" placeholder="HARGA"  onkeyup="this.value = this.value.toUpperCase();" ;">
+                              <input type="number" class="form-control" id="txtHarga" name="harga" placeholder="Price"  onkeyup="this.value = this.value.toUpperCase();" ;">
                             </div>
                         </div>
                     </div>
@@ -132,7 +132,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                               <label for="KET">Description</label>
-                              <textarea class="form-control" id="txtKeterangan" name="ket" placeholder="Keterangan" style="resize: none;" rows="3" maxlength="60"></textarea>
+                              <textarea class="form-control" id="txtKeterangan" name="ket" placeholder="Description" style="resize: none;" rows="3" maxlength="60"></textarea>
                               {{-- <input type="text" class="form-control" id="txtKeterangan" name="KET" placeholder="KET"  onkeyup="this.value = this.value.toUpperCase();" ;"> --}}
                             </div>
                         </div>
